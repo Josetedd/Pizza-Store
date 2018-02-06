@@ -21,17 +21,17 @@
                 android:layout_height="150dp"
                 android:layout_marginLeft="115dp"
                 android:layout_marginTop="50dp"
-                android:src="@mipmap/pizza4" />
+                android:src="@drawable/pizza4" />
 
                 <EditText
                     android:id="@+id/inputName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Name"
-                    android:inputType="textCapWords"
                     android:layout_marginLeft="20dp"
                     android:layout_marginRight="20dp"
                     android:layout_marginTop="5dp"
+                    android:hint="Name"
+                    android:inputType="textCapWords"
                     android:padding="10dp"/>
 
 
@@ -39,21 +39,21 @@
                     android:id="@+id/inputemail"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Email"
-                    android:inputType="textCapWords"
                     android:layout_marginLeft="20dp"
                     android:layout_marginRight="20dp"
                     android:layout_marginTop="15dp"
+                    android:hint="Email"
+                    android:inputType="textCapWords"
                     android:padding="10dp"/>
                 <EditText
                     android:id="@+id/inputpassword"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Enter Password"
-                    android:inputType="textCapWords"
                     android:layout_marginLeft="20dp"
                     android:layout_marginRight="20dp"
                     android:layout_marginTop="15dp"
+                    android:hint="Enter Password"
+                    android:inputType="textCapWords"
                     android:padding="10dp"
                     />
             <Button
@@ -61,20 +61,20 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="20dp"
+                android:layout_marginTop="15dp"
                 android:background="#FFA500"
-                android:text="Create account"
                 android:onClick="createaccount"
-                android:layout_marginTop="15dp"/>
+                android:text="Create account" />
 
             <TextView
                 android:id="@+id/loginlink"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="Already a member? Log In"
-                android:textSize="15sp"
                 android:layout_marginBottom="10dp"
-                android:onClick="member_login"/>
+                android:gravity="center"
+                android:onClick="member_login"
+                android:text="Already a member? Log In"
+                android:textSize="15sp" />
         </LinearLayout>
     </ScrollView>
 </LinearLayout>
