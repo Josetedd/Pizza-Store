@@ -8,7 +8,7 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#f0ffff"
+        android:background="#F6F6F6"
         tools:context="com.example.android.alcpizza.Usersignup">
 
         <LinearLayout
@@ -23,17 +23,17 @@
                 android:layout_marginTop="50dp"
                 android:src="@drawable/pizza4" />
 
-                <EditText
-                    android:id="@+id/inputName"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginRight="20dp"
-                    android:layout_marginTop="5dp"
-                    android:hint="Name"
-                    android:inputType="textCapWords"
-                    android:padding="10dp"/>
-
+            <!--<EditText
+                android:id="@+id/inputName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="5dp"
+                android:hint="Name"
+                android:inputType="textCapWords"
+                android:padding="10dp"/>
+-->
                 <EditText
                     android:id="@+id/inputemail"
                     android:layout_width="match_parent"
@@ -62,8 +62,7 @@
                 android:layout_margin="20dp"
                 android:layout_marginTop="15dp"
                 android:background="#FFA500"
-                android:onClick="createaccount"
-                android:text="Create account" />
+                android:text="Login" />
 
             <TextView
                 android:id="@+id/loginlink"
@@ -71,8 +70,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
                 android:gravity="center"
-                android:onClick="member_login"
-                android:text="Already a member? Log In"
+                android:text="Not a member? Sign Up"
                 android:textSize="15sp" />
         </LinearLayout>
     </ScrollView>
