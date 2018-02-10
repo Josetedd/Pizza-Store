@@ -1,79 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/ActivityStyle">
 
-    <ScrollView
+    <ImageView
+        android:id="@+id/imageView2"
+        style="@style/PizzaLogoStyle"
+        android:layout_marginTop="48dp"
+        android:src="@drawable/pizza4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!--<EditText
+        android:id="@+id/inputName"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#f0ffff"
-        tools:context="com.example.android.alcpizza.Usersignup">
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="5dp"
+        android:hint="Name"
+        android:inputType="textCapWords"
+        android:padding="10dp"/>
+-->
+    <EditText
+        android:id="@+id/inputemail"
+        style="@style/EditTextStyle"
+        android:hint="Email"
+        android:inputType="textCapWords"
+        android:padding="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+    <EditText
+        android:id="@+id/inputpassword"
+        style="@style/EditTextStyle"
+        android:hint="Enter Password"
+        android:inputType="textCapWords"
+        android:padding="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inputemail" />
 
-            <ImageView
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                android:layout_marginLeft="115dp"
-                android:layout_marginTop="50dp"
-                android:src="@drawable/pizza4" />
+    <Button
+        android:id="@+id/loginbutton"
+        style="@style/ButtonStyle"
+        android:text="Login"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inputpassword" />
 
-                <EditText
-                    android:id="@+id/inputName"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginRight="20dp"
-                    android:layout_marginTop="5dp"
-                    android:hint="Name"
-                    android:inputType="textCapWords"
-                    android:padding="10dp"/>
-
-                <EditText
-                    android:id="@+id/inputemail"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginRight="20dp"
-                    android:layout_marginTop="15dp"
-                    android:hint="Email"
-                    android:inputType="textCapWords"
-                    android:padding="10dp"/>
-                <EditText
-                    android:id="@+id/inputpassword"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginRight="20dp"
-                    android:layout_marginTop="15dp"
-                    android:hint="Enter Password"
-                    android:inputType="textCapWords"
-                    android:padding="10dp"
-                    />
-            <Button
-                android:id="@+id/signupbutton"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="20dp"
-                android:layout_marginTop="15dp"
-                android:background="#FFA500"
-                android:onClick="createaccount"
-                android:text="Create account" />
-
-            <TextView
-                android:id="@+id/loginlink"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                android:gravity="center"
-                android:onClick="member_login"
-                android:text="Already a member? Log In"
-                android:textSize="15sp" />
-        </LinearLayout>
-    </ScrollView>
-</LinearLayout>
+    <TextView
+        android:id="@+id/signinlink"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:onClick="openSignupActivity"
+        android:text="Not a member? Sign Up"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/loginbutton" />
+</android.support.constraint.ConstraintLayout>
