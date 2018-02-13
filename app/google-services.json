@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "893054507598-8r6db09dpbnrdvs85ifri20jmsl1ds17.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.android.pizzaapp",
+            "certificate_hash": "dea03fc604ac4f0958e3c7475b2d19d8fa309bff"
+          }
+        },
+        {
           "client_id": "893054507598-mj4sic4skra4optk53c9m22ba7a10in1.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {

@@ -16,6 +16,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class SignUpActivity extends AppCompatActivity {
     FirebaseAuth mAuth;
@@ -60,6 +61,10 @@ public class SignUpActivity extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         //checking if success
                         if(task.isSuccessful()){
+                            // close signup activity
+                            finish();
+                            //Go to Main Screen
+                            startActivity(new Intent(getApplicationContext(), MainActivity.class));
                             // show registration success
                             Toast.makeText(SignUpActivity.this,"Successfully registered",Toast.LENGTH_LONG).show();
                             //todo : enable user to access main activity
