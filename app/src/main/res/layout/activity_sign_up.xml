@@ -50,13 +50,24 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/inputPassword" />
 
+    <TextView
+        android:id="@+id/WarningText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:textColor="#ff2626"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inputPassConfirm" />
+
     <Button
         android:id="@+id/signupbutton"
         style="@style/ButtonStyle"
         android:text="Sign up"
+        android:onClick="onClick"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/inputPassConfirm" />
+        app:layout_constraintTop_toBottomOf="@+id/WarningText" />
 
 
 </android.support.constraint.ConstraintLayout>
