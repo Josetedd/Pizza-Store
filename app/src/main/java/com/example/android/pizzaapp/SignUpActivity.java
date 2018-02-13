@@ -19,6 +19,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 public class SignUpActivity extends AppCompatActivity {
+    ProgressDialog progressDialog;
     FirebaseAuth mAuth;
     EditText emailInputEdit;
     EditText passInputEdit;
@@ -41,6 +42,11 @@ public class SignUpActivity extends AppCompatActivity {
     public void registerUser(){
         String email = emailInputEdit.getText().toString().toLowerCase().trim();
         String password = passInputEdit.getText().toString().toLowerCase().trim();
+        progressDialog = new ProgressDialog(SignUpActivity.this);
+        progressDialog.setMessage("Registering..."); // Setting Message
+        progressDialog.setTitle("Sign up"); // Setting Title
+        progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER); // Progress Dialog Style Spinner
+        progressDialog.show(); // Display Progress Dialog
         //checking if email and passwords are empty
         if(TextUtils.isEmpty(email)){
             Toast.makeText(this,"Please enter email",Toast.LENGTH_LONG).show();
@@ -52,8 +58,9 @@ public class SignUpActivity extends AppCompatActivity {
             return;
         }
 
-        //if the email and password are not empty
 
+        //if the email and password are not empty
+        progressDialog.show(); // Display Progress Dialog
         //creating a new user
         mAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
@@ -73,8 +80,10 @@ public class SignUpActivity extends AppCompatActivity {
                             //display some message here
                             Toast.makeText(SignUpActivity.this,"Registration Error",Toast.LENGTH_LONG).show();
                         }
+                        progressDialog.dismiss();
                     }
                 });
+
     }
     public void onClick(View view) {
 
