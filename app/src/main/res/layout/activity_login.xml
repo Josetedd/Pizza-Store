@@ -12,22 +12,12 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <!--<EditText
-        android:id="@+id/inputName"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginTop="5dp"
-        android:hint="Name"
-        android:inputType="textCapWords"
-        android:padding="10dp"/>
--->
+
     <EditText
         android:id="@+id/inputemail"
         style="@style/EditTextStyle"
         android:hint="Email"
-        android:inputType="textCapWords"
+        android:inputType="textEmailAddress"
         android:padding="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -37,7 +27,7 @@
         android:id="@+id/inputpassword"
         style="@style/EditTextStyle"
         android:hint="Enter Password"
-        android:inputType="textCapWords"
+        android:inputType="textPassword"
         android:padding="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -49,7 +39,8 @@
         android:text="Login"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/inputpassword" />
+        app:layout_constraintTop_toBottomOf="@+id/inputpassword"
+        android:onClick="onClick"/>
 
     <TextView
         android:id="@+id/signinlink"

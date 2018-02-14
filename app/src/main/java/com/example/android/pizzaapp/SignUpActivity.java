@@ -46,7 +46,7 @@ public class SignUpActivity extends AppCompatActivity {
         progressDialog.setMessage("Registering..."); // Setting Message
         progressDialog.setTitle("Sign up"); // Setting Title
         progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER); // Progress Dialog Style Spinner
-        progressDialog.show(); // Display Progress Dialog
+
         //checking if email and passwords are empty
         if(TextUtils.isEmpty(email)){
             Toast.makeText(this,"Please enter email",Toast.LENGTH_LONG).show();
