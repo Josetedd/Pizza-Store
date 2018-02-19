@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/pizzaimage"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="15dp"
+        android:layout_marginStart="15dp"
+        android:src="@drawable/pizaa1" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/pizzaimage"
+        android:text="PIZZA1"
+        android:textColor="#000"
+        android:textSize="40sp"
+        android:textStyle="italic"
+        android:layout_marginTop="60dp"/>
+    <TextView
+        android:id="@+id/text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/pizzaimage"
+        android:text="Quantity"
+        android:textSize="35sp"
+        android:textColor="#000"
+        android:textStyle="italic"
+        android:layout_centerHorizontal="true"/>
+    <LinearLayout
+        android:id="@+id/linear1"
+        android:layout_below="@+id/text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginLeft="45dp">
+
+        <Button
+            android:id="@+id/plus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="+"
+            android:layout_marginLeft="30dp"
+            android:layout_marginStart="30dp"
+            />
+
+        <TextView
+            android:layout_width="25dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="7dp"
+            android:layout_toLeftof="@+id/plus"
+            android:text="2"
+            android:textSize="25sp" />
+        <Button
+            android:id="@+id/minus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="15dp"
+            android:text="-" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/linear1"
+        android:layout_marginTop="14dp">
+
+        <TextView
+            android:id="@+id/textsize"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center_vertical"
+            android:text="SIZE"
+            android:textColor="#000"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+        <android.support.v7.widget.AppCompatCheckBox
+            android:id="@+id/small"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/medium"
+            android:layout_alignBottom="@+id/medium"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="26dp"
+            android:layout_marginStart="26dp"
+            android:text="Small"
+            android:textSize="20sp"
+            android:textStyle="italic" />
+
+        <android.support.v7.widget.AppCompatCheckBox
+            android:id="@+id/medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textsize"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="14dp"
+            android:text="Medium"
+            android:textSize="20sp"
+            android:textStyle="italic"/>
+
+        <android.support.v7.widget.AppCompatCheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/medium"
+            android:layout_alignBottom="@+id/medium"
+            android:layout_marginLeft="38dp"
+            android:layout_marginStart="38dp"
+            android:layout_toEndOf="@+id/medium"
+            android:layout_toRightOf="@+id/medium"
+            android:text="Large"
+            android:textSize="20sp"
+            android:textStyle="italic"/>
+        <TextView
+            android:id="@+id/toppings"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/small"
+            android:text="Toppings"
+            android:textSize="25sp"
+            android:textColor="#000"
+            android:textStyle="bold"
+            android:layout_marginLeft="70dp"
+            android:layout_marginTop="10dp"/>
+
+        <android.support.v7.widget.AppCompatCheckBox
+            android:id="@+id/topping1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/topping2"
+            android:layout_alignStart="@+id/topping2"
+            android:layout_below="@+id/toppings"
+            android:layout_marginTop="5dp"
+            android:text="Mushrooms and Onions"
+            android:textSize="18sp"
+            android:textStyle="italic" />
+
+        <android.support.v7.widget.AppCompatCheckBox
+            android:id="@+id/topping2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/topping3"
+            android:layout_alignStart="@+id/topping3"
+            android:layout_below="@+id/topping1"
+            android:text="Extra Cheese and Bacon"
+            android:textSize="18sp"
+            android:textStyle="italic"
+            android:layout_marginTop="5dp"/>
+        <android.support.v7.widget.AppCompatCheckBox
+            android:id="@+id/topping3"
+            android:layout_below="@id/topping2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Black Olives and Sausage"
+            android:textSize="18sp"
+            android:textStyle="italic"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="5dp"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/price"
+            android:layout_below="@id/topping3"
+            android:text="PRICE"
+            android:textColor="#000"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:layout_marginTop="20dp"
+            android:layout_margin="15dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/pricetextview"
+            android:layout_below="@id/price"
+            android:layout_marginLeft="15dp"
+            android:text="Kshs 0"
+            android:textSize="15dp"
+            android:textColor="#000"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/pricetextview"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:text="ADD TO CART"
+            android:textColor="#000"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>
+
+</ScrollView>
