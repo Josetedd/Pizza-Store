@@ -70,7 +70,7 @@ public class ResetPassActivity extends AppCompatActivity {
         }
         if (view == backBtn){
            finish();
-            startActivity(new Intent(getApplicationContext(), loginActivity.class));
+            startActivity(new Intent(getApplicationContext(), LoginActivity.class));
         }
 
     }

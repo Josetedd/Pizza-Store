@@ -24,7 +24,7 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
     <EditText
-        android:id="@+id/inputpassword"
+        android:id="@+id/InputPass"
         style="@style/EditTextStyle"
         android:hint="Enter Password"
         android:inputType="textPassword"
@@ -39,7 +39,7 @@
         android:text="Login"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/inputpassword"
+        app:layout_constraintTop_toBottomOf="@+id/InputPass"
         android:onClick="onClick"/>
     <TextView
         android:id="@+id/resetLink"
