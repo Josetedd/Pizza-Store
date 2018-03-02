@@ -3,6 +3,7 @@ package com.example.android.pizzaapp;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -15,6 +16,7 @@ public class MainActivity extends AppCompatActivity {
     private ListView homeList;
     //declare FirebaseAuth instance
     private FirebaseAuth mAuth;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
             startActivity(new Intent(getApplicationContext(), LoginActivity.class));
         }
         // Temporary data. list of pizzas will be from firebase realtime database
-        Pizza pizza_data[]= new Pizza[]{
+        final Pizza pizza_data[]= new Pizza[]{
                 new Pizza(R.drawable.pizzaicon,"BBQ Chicken", "BBQ SAUCE, CORN, GRILLED CHICKEN, ONION",5),
                 new Pizza(R.drawable.pizzaicon,"BBQ Steak", "BBQ SAUCE, CORN, ONION, BEEF STEAK",4),
                 new Pizza(R.drawable.pizzaicon,"BEEF SUPREME", "PIZZA SAUCE, BBQ SAUCE, ONION, TOMATO, BEEF MINCE",2),
@@ -41,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
 
         };
         //CONNECT DATA TO LIST
-        PizzaViewAdapter adapter = new PizzaViewAdapter(this,R.layout.home_items_activity,pizza_data);
+        final PizzaViewAdapter adapter = new PizzaViewAdapter(this,R.layout.home_items_activity,pizza_data);
 
         //home listview initialize
         homeList= (ListView) findViewById(R.id.HomeList);
@@ -53,10 +55,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position,
                                     long id) {
-
-                String item = ((TextView)view).getText().toString();
-
-                Toast.makeText(getBaseContext(), item, Toast.LENGTH_LONG).show();
+               Pizza pizza = (Pizza) parent.getItemAtPosition(position);
+                Intent i = new Intent(MainActivity.this, SelectedPizza.class);
+                Bundle bundle = new Bundle();
+                bundle.putInt("ImageId", pizza.getPizzaImage());
+                bundle.putString("Title", pizza.getTitle());
+                bundle.putString("Description", pizza.getDescription());
+                i.putExtras(bundle);
+                startActivity(i);
 
             }
         });
