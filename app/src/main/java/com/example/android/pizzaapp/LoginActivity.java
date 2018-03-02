@@ -17,7 +17,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
-public class loginActivity extends AppCompatActivity {
+public class LoginActivity extends AppCompatActivity {
     ProgressDialog progressDialog;
     FirebaseAuth mAuth;
     EditText emailEdit;
@@ -40,7 +40,7 @@ public class loginActivity extends AppCompatActivity {
         }
         // initialize views
         emailEdit = findViewById(R.id.inputemail);
-        passwordEdit = findViewById(R.id.inputpassword);
+        passwordEdit = findViewById(R.id.InputPass);
         loginBtn = findViewById(R.id.loginbutton);
         resetLink = findViewById(R.id.resetLink);
         signupLink = findViewById(R.id.signinlink);
@@ -53,7 +53,7 @@ public class loginActivity extends AppCompatActivity {
         String email = emailEdit.getText().toString().trim();
         String password = passwordEdit.getText().toString().trim();
         // progressdialog initialize
-        progressDialog = new ProgressDialog(loginActivity.this);
+        progressDialog = new ProgressDialog(LoginActivity.this);
         progressDialog.setMessage("logging in..."); // Setting Message
         progressDialog.setTitle("log in"); // Setting Title
         progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER); // Progress Dialog Style Spinner
@@ -72,7 +72,7 @@ public class loginActivity extends AppCompatActivity {
 
         // if not empty
         progressDialog.show(); // Display Progress Dialog
-        mAuth.createUserWithEmailAndPassword(email, password)
+        mAuth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
@@ -82,7 +82,7 @@ public class loginActivity extends AppCompatActivity {
                             startActivity(new Intent(getApplicationContext(), MainActivity.class));
                         } else {
                             //display some message here
-                            Toast.makeText(loginActivity.this, "Registration Error", Toast.LENGTH_LONG).show();
+                            Toast.makeText(LoginActivity.this, "Registration Error", Toast.LENGTH_LONG).show();
                         }
                         progressDialog.dismiss();
                     }
