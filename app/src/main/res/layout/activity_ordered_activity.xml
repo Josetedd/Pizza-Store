@@ -1,0 +1,464 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context="com.example.android.pizzaapp.Ordered_activity">
+
+<android.support.constraint.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="84dp"
+        android:layout_marginStart="84dp"
+        android:fontFamily="casual"
+        android:paddingTop="20dp"
+        android:text="Ordered Summary"
+        android:textColor="#397D02"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/itemheader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:text="Item"
+        android:textColor="#000"
+        android:textSize="15sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/header" />
+
+    <TextView
+        android:id="@+id/qtyheader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="54dp"
+        android:layout_marginStart="54dp"
+        android:text="Qty."
+        android:textColor="#000"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="@+id/line1"
+        app:layout_constraintLeft_toRightOf="@+id/firstitem"
+        app:layout_constraintStart_toEndOf="@+id/firstitem" />
+
+    <TextView
+        android:id="@+id/priceheader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="49dp"
+        android:layout_marginStart="60dp"
+        android:text="Price"
+        android:textColor="#000"
+        android:textSize="15sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/qtyheader"
+        app:layout_constraintBottom_toBottomOf="@+id/qtyheader"
+        app:layout_constraintLeft_toRightOf="@+id/qtyheader"
+        app:layout_constraintStart_toEndOf="@+id/qtyheader" />
+
+    <TextView
+        android:id="@+id/cancelheader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:layout_marginStart="32dp"
+        android:text="Cancel"
+        android:textColor="#000"
+        android:textSize="15sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/priceheader"
+        app:layout_constraintBottom_toBottomOf="@+id/priceheader"
+        app:layout_constraintLeft_toRightOf="@+id/priceheader"
+        app:layout_constraintStart_toEndOf="@+id/priceheader" />
+
+    <View
+        android:id="@+id/line1"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="16dp"
+        android:background="@android:color/darker_gray"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/itemheader" />
+
+    <TextView
+        android:id="@+id/firstitem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="24dp"
+        android:text="Fresh veggie"
+        android:textColor="#000"
+        app:layout_constraintEnd_toStartOf="@+id/firstminus"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="@+id/itemheader"
+        app:layout_constraintStart_toStartOf="@+id/itemheader"
+        app:layout_constraintTop_toBottomOf="@+id/itemheader" />
+
+    <Button
+        android:id="@+id/firstminus"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginLeft="88dp"
+        android:layout_marginStart="88dp"
+        android:layout_marginTop="108dp"
+        android:onClick="minusOneforItemOne"
+        android:text="-"
+        android:textColor="#000"
+        app:layout_constraintStart_toStartOf="@+id/line1"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/qty1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:text="1"
+        android:textColor="#000"
+        app:layout_constraintBottom_toBottomOf="@+id/firstitem"
+        app:layout_constraintEnd_toStartOf="@+id/firstplus"
+        app:layout_constraintStart_toStartOf="@+id/qtyheader" />
+
+    <Button
+        android:id="@+id/firstplus"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="8dp"
+        android:onClick="addOneforItemOne"
+        android:text="+"
+        android:textColor="#000"
+        app:layout_constraintBottom_toBottomOf="@+id/firstminus"
+        app:layout_constraintStart_toEndOf="@+id/firstminus"
+        app:layout_constraintTop_toTopOf="@+id/firstminus"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/firstprice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="88dp"
+        android:layout_marginStart="8dp"
+        android:text="355"
+        android:textColor="#000"
+        app:layout_constraintBottom_toBottomOf="@+id/qty1"
+        app:layout_constraintStart_toStartOf="@+id/priceheader" />
+
+    <CheckBox
+        android:id="@+id/firstcheckbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/firstplus"
+        app:layout_constraintStart_toStartOf="@+id/cancelheader" />
+
+    <TextView
+        android:id="@+id/seconditem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="28dp"
+        android:text="Veg Spicy"
+        android:textColor="#000"
+        app:layout_constraintBottom_toBottomOf="@+id/qty2"
+        app:layout_constraintEnd_toStartOf="@+id/secondminus"
+        app:layout_constraintHorizontal_bias="0.05"
+        app:layout_constraintStart_toStartOf="@+id/firstitem"
+        app:layout_constraintTop_toBottomOf="@+id/firstitem"
+        app:layout_constraintVertical_bias="0.25" />
+
+
+    <Button
+        android:id="@+id/secondminus"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="12dp"
+        android:onClick="minusOneforItemTwo"
+        android:text="-"
+        android:textColor="#000"
+        app:layout_constraintStart_toStartOf="@+id/firstminus"
+        app:layout_constraintTop_toBottomOf="@+id/firstminus" />
+
+    <TextView
+        android:id="@+id/qty2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:text="1"
+        android:textColor="#000"
+        app:layout_constraintBottom_toBottomOf="@+id/secondminus"
+        app:layout_constraintEnd_toEndOf="@+id/qty1"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/qty1" />
+
+    <Button
+        android:id="@+id/secondplus"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="44dp"
+        android:layout_marginStart="44dp"
+        android:onClick="addOneforItemTwo"
+        android:text="+"
+        android:textColor="#000"
+        app:layout_constraintBottom_toBottomOf="@+id/secondminus"
+        app:layout_constraintEnd_toEndOf="@+id/firstplus"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/secondminus"
+        app:layout_constraintTop_toTopOf="@+id/secondminus"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/secondprice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="44dp"
+        android:layout_marginRight="44dp"
+        android:text="210"
+        android:textColor="#000"
+        app:layout_constraintBottom_toBottomOf="@+id/qty2"
+        app:layout_constraintEnd_toStartOf="@+id/secondcheckbox"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/firstprice" />
+
+    <CheckBox
+        android:id="@+id/secondcheckbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/secondplus"
+        app:layout_constraintStart_toStartOf="@+id/firstcheckbox" />
+
+    <TextView
+        android:id="@+id/thirditem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="20dp"
+        android:text="Garlic Bread"
+        android:textColor="#000"
+        app:layout_constraintBottom_toBottomOf="@+id/thirdminus"
+        app:layout_constraintEnd_toStartOf="@+id/thirdminus"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/seconditem"
+        app:layout_constraintTop_toBottomOf="@+id/seconditem"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/thirdminus"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginLeft="96dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="12dp"
+        android:onClick="minusOneforItemThree"
+        android:text="-"
+        app:layout_constraintEnd_toEndOf="@+id/secondminus"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/secondminus"
+        app:layout_constraintTop_toBottomOf="@+id/secondminus" />
+
+    <TextView
+        android:id="@+id/qty3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:text="1"
+        android:textColor="#000"
+        app:layout_constraintBottom_toBottomOf="@+id/thirdminus"
+        app:layout_constraintEnd_toEndOf="@+id/qty2"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="@+id/qty2"
+        app:layout_constraintStart_toStartOf="@+id/qty2" />
+
+    <Button
+        android:id="@+id/thirdplus"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:onClick="addOneforItemThree"
+        android:text="+"
+        app:layout_constraintBottom_toBottomOf="@+id/thirdminus"
+        app:layout_constraintEnd_toEndOf="@+id/secondplus"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/secondplus"
+        app:layout_constraintTop_toTopOf="@+id/thirdminus"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/thirdprice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:text="105"
+        android:textColor="#000"
+        app:layout_constraintBottom_toBottomOf="@+id/qty3"
+        app:layout_constraintEnd_toStartOf="@+id/thirdcheckbox"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/secondprice" />
+
+    <CheckBox
+        android:id="@+id/thirdcheckbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColorLink="#ff0000"
+        android:textCursorDrawable="@android:drawable/ic_menu_close_clear_cancel"
+        app:layout_constraintBottom_toBottomOf="@+id/thirdplus"
+        app:layout_constraintStart_toStartOf="@+id/secondcheckbox" />
+
+    <View
+        android:id="@+id/line2"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:background="@android:color/darker_gray"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintRight_toRightOf="@+id/line1"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/stotal_name"
+        android:layout_width="wrap_content"
+        android:layout_height="24dp"
+        android:layout_marginLeft="172dp"
+        android:layout_marginStart="172dp"
+        android:layout_marginTop="8dp"
+        android:text="Sub Total"
+        app:layout_constraintStart_toStartOf="@+id/line2"
+        app:layout_constraintTop_toBottomOf="@+id/line2" />
+
+    <TextView
+        android:id="@+id/stotalfigure"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        android:text="0.00"
+        android:textColor="#000"
+        app:layout_constraintBottom_toBottomOf="@+id/stotal_name"
+        app:layout_constraintStart_toStartOf="@+id/vatfigure" />
+
+    <TextView
+        android:id="@+id/vatname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="VAT"
+        app:layout_constraintStart_toStartOf="@+id/stotal_name"
+        app:layout_constraintTop_toBottomOf="@+id/stotal_name" />
+
+    <TextView
+        android:id="@+id/vatfigure"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="96dp"
+        android:layout_marginStart="96dp"
+        android:text="0.00"
+        android:textColor="#000"
+        app:layout_constraintBottom_toBottomOf="@+id/vatname"
+        app:layout_constraintStart_toEndOf="@+id/vatname" />
+
+    <TextView
+        android:id="@+id/stax_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Service Tax"
+        app:layout_constraintStart_toStartOf="@+id/vatname"
+        app:layout_constraintTop_toBottomOf="@+id/vatname" />
+
+    <TextView
+        android:id="@+id/stax_figure"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="28.68"
+        android:textColor="#000"
+        app:layout_constraintBottom_toTopOf="@+id/line3"
+        app:layout_constraintStart_toStartOf="@+id/vatfigure"
+        app:layout_constraintTop_toBottomOf="@+id/vatfigure"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <View
+        android:id="@+id/line3"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="116dp"
+        android:background="@android:color/darker_gray"
+        app:layout_constraintEnd_toEndOf="@+id/line2"
+        app:layout_constraintLeft_toLeftOf="@+id/thirditem"
+        app:layout_constraintRight_toRightOf="@+id/line2"
+        app:layout_constraintStart_toStartOf="@+id/thirditem"
+        app:layout_constraintTop_toBottomOf="@+id/line2" />
+
+    <TextView
+        android:id="@+id/gtotal_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="Grand Total"
+        android:textColor="#000"
+        app:layout_constraintStart_toStartOf="@+id/stax_name"
+        app:layout_constraintTop_toBottomOf="@+id/line3" />
+
+    <TextView
+        android:id="@+id/gtotal_figure"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="0.00"
+        android:textColor="#000"
+        app:layout_constraintStart_toStartOf="@+id/stax_figure"
+        app:layout_constraintTop_toBottomOf="@+id/stax_figure" />
+
+    <View
+        android:id="@+id/line4"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="12dp"
+        android:background="@android:color/darker_gray"
+        app:layout_constraintEnd_toEndOf="@+id/line3"
+        app:layout_constraintLeft_toLeftOf="@+id/line3"
+        app:layout_constraintRight_toRightOf="@+id/line3"
+        app:layout_constraintStart_toStartOf="@+id/line3"
+        app:layout_constraintTop_toBottomOf="@+id/gtotal_name" />
+
+    <Button
+        android:id="@+id/orderbutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:background="#980000"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:text="Place Your Order"
+        android:textColor="#ffffff"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/line4" />
+</android.support.constraint.ConstraintLayout>
+</ScrollView>

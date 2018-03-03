@@ -19,7 +19,8 @@
         <activity android:name=".LoginActivity" />
         <activity android:name=".SignUpActivity" />
         <activity android:name=".ResetPassActivity" />
-        <activity android:name=".SelectedPizza"></activity>
+        <activity android:name=".SelectedPizza" />
+        <activity android:name=".Ordered_activity"></activity>
     </application>
 
 </manifest>
