@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -30,5 +31,9 @@ public class SelectedPizza extends AppCompatActivity {
             descTxt.setText(bundle.getString("Description"));
             imageImgView.setImageResource(bundle.getInt("ImageId"));
         }
+    }
+    public void goToorderSummary(View view){
+        Intent i = new Intent(SelectedPizza.this, Ordered_activity.class);
+        startActivity(i);
     }
 }
