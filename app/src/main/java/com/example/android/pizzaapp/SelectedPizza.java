@@ -33,7 +33,9 @@ public class SelectedPizza extends AppCompatActivity {
         }
     }
     public void goToorderSummary(View view){
+        Log.e("Clicked:", "yeah");
         Intent i = new Intent(SelectedPizza.this, Ordered_activity.class);
         startActivity(i);
     }
+
 }
