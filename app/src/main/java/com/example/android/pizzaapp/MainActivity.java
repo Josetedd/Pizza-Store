@@ -33,13 +33,13 @@ public class MainActivity extends AppCompatActivity {
         }
         // Temporary data. list of pizzas will be from firebase realtime database
         final Pizza pizza_data[]= new Pizza[]{
-                new Pizza(R.drawable.pizzaicon,"BBQ Chicken", "BBQ SAUCE, CORN, GRILLED CHICKEN, ONION",5),
-                new Pizza(R.drawable.pizzaicon,"BBQ Steak", "BBQ SAUCE, CORN, ONION, BEEF STEAK",4),
-                new Pizza(R.drawable.pizzaicon,"BEEF SUPREME", "PIZZA SAUCE, BBQ SAUCE, ONION, TOMATO, BEEF MINCE",2),
-                new Pizza(R.drawable.pizzaicon,"CHICKEN BALI", "PIZZA SAUCE, GRILLED CHICKEN, MUSHROOM, PINEAPPLE, RED CHILI",5),
-                new Pizza(R.drawable.pizzaicon,"CHICKEN SUPREME", "PIZZA SAUCE, GRILLED CHICKEN, MIX PEPPERS, ONION, TOMATO",3),
-                new Pizza(R.drawable.pizzaicon,"SWAHILI CHICKEN", "PIZZA SAUCE, CORN, PINEAPPLE, RED CHILI, SWAHILI CHICKEN",2),
-                new Pizza(R.drawable.pizzaicon,"CHICKEN TIKKA", "PIZZA SAUCE, MIX PEPPERS, MUSHROOM, ONION, RED CHILI, TIKKA CHICKEN",4),
+                new Pizza(R.drawable.pizza1,"BBQ Chicken", "BBQ SAUCE, CORN, GRILLED CHICKEN, ONION",5),
+                new Pizza(R.drawable.pizza2,"BBQ Steak", "BBQ SAUCE, CORN, ONION, BEEF STEAK",4),
+                new Pizza(R.drawable.pizza3,"BEEF SUPREME", "PIZZA SAUCE, BBQ SAUCE, ONION, TOMATO, BEEF MINCE",2),
+                new Pizza(R.drawable.pizza44,"CHICKEN BALI", "PIZZA SAUCE, GRILLED CHICKEN, MUSHROOM, PINEAPPLE, RED CHILI",5),
+                new Pizza(R.drawable.pizza5,"CHICKEN SUPREME", "PIZZA SAUCE, GRILLED CHICKEN, MIX PEPPERS, ONION, TOMATO",3),
+                new Pizza(R.drawable.pizza6,"SWAHILI CHICKEN", "PIZZA SAUCE, CORN, PINEAPPLE, RED CHILI, SWAHILI CHICKEN",2),
+                new Pizza(R.drawable.pizza7,"CHICKEN TIKKA", "PIZZA SAUCE, MIX PEPPERS, MUSHROOM, ONION, RED CHILI, TIKKA CHICKEN",4),
 
         };
         //CONNECT DATA TO LIST

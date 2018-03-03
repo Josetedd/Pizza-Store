@@ -29,7 +29,7 @@
         <item name="android:layout_margin">20dp</item>
         <item name="android:layout_marginEnd">8dp</item>
         <item name="android:layout_marginStart">8dp</item>
-        <item name="android:background">#FFA500</item>
+        <item name="android:background">#ff0000</item>
     </style>
 
     <style name="EditTextStyle">
