@@ -22,4 +22,16 @@ public class Pizza {
         this. description = description;
         this. rating = rating;
     }
+
+    public int getPizzaImage() {
+        return pizzaImage;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public String getDescription() {
+        return description;
+    }
 }

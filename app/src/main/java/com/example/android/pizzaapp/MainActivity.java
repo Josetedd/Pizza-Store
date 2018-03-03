@@ -3,11 +3,10 @@ package com.example.android.pizzaapp;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 
@@ -29,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
             // and open the login activity
             startActivity(new Intent(getApplicationContext(), LoginActivity.class));
         }
+        //ImageView mypizza= (ImageView) findViewById(R.id.PizzaImage);
         // Temporary data. list of pizzas will be from firebase realtime database
         Pizza pizza_data[]= new Pizza[]{
                 new Pizza(R.drawable.pizzaicon,"BBQ Chicken", "BBQ SAUCE, CORN, GRILLED CHICKEN, ONION",5),
@@ -54,9 +54,18 @@ public class MainActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position,
                                     long id) {
 
-                String item = ((TextView)view).getText().toString();
+                //Object item = parent.getItemAtPosition(position);
+                Pizza pizza= (Pizza) parent.getItemAtPosition(position);
+                Intent  intent = new Intent(MainActivity.this, SelectedPizza.class);
+                Bundle bundle = new Bundle();
+                bundle.putInt("ImageId", pizza.getPizzaImage());
+                bundle.putString("Title", pizza.getTitle());
+                bundle.putString("Description", pizza.getDescription());
+                intent.putExtras(bundle);
+                startActivity(intent);
 
-                Toast.makeText(getBaseContext(), item, Toast.LENGTH_LONG).show();
+                Log.e("Item", pizza.getTitle());
+
 
             }
         });
